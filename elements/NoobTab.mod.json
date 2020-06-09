@@ -1,0 +1,11 @@
+{
+  "_fv": 8,
+  "_type": "tab",
+  "definition": {
+    "name": "Noob Tab",
+    "icon": {
+      "value": "CUSTOM:NoobChest"
+    },
+    "showSearch": true
+  }
+}

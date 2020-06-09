@@ -40,31 +40,31 @@ import java.util.ArrayList;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
 
-public class TheGameofNoobsElements {
+public class NoobModElements {
 	public final List<ModElement> elements = new ArrayList<>();
 	public final List<Supplier<Block>> blocks = new ArrayList<>();
 	public final List<Supplier<Item>> items = new ArrayList<>();
 	public final List<Supplier<Biome>> biomes = new ArrayList<>();
 	public final List<Supplier<EntityType<?>>> entities = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
-	public TheGameofNoobsElements() {
+	public NoobModElements() {
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("noob").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();
 			for (ModFileScanData.AnnotationData annotationData : annotations) {
 				if (annotationData.getAnnotationType().getClassName().equals(ModElement.Tag.class.getName())) {
 					Class<?> clazz = Class.forName(annotationData.getClassType().getClassName());
-					if (clazz.getSuperclass() == TheGameofNoobsElements.ModElement.class)
-						elements.add((TheGameofNoobsElements.ModElement) clazz.getConstructor(this.getClass()).newInstance(this));
+					if (clazz.getSuperclass() == NoobModElements.ModElement.class)
+						elements.add((NoobModElements.ModElement) clazz.getConstructor(this.getClass()).newInstance(this));
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		Collections.sort(elements);
-		elements.forEach(TheGameofNoobsElements.ModElement::initElements);
-		this.addNetworkMessage(TheGameofNoobsVariables.WorldSavedDataSyncMessage.class, TheGameofNoobsVariables.WorldSavedDataSyncMessage::buffer,
-				TheGameofNoobsVariables.WorldSavedDataSyncMessage::new, TheGameofNoobsVariables.WorldSavedDataSyncMessage::handler);
+		elements.forEach(NoobModElements.ModElement::initElements);
+		this.addNetworkMessage(NoobModVariables.WorldSavedDataSyncMessage.class, NoobModVariables.WorldSavedDataSyncMessage::buffer,
+				NoobModVariables.WorldSavedDataSyncMessage::new, NoobModVariables.WorldSavedDataSyncMessage::handler);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
@@ -76,30 +76,30 @@ public class TheGameofNoobsElements {
 	@SubscribeEvent
 	public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
 		if (!event.getPlayer().world.isRemote) {
-			WorldSavedData mapdata = TheGameofNoobsVariables.MapVariables.get(event.getPlayer().world);
-			WorldSavedData worlddata = TheGameofNoobsVariables.WorldVariables.get(event.getPlayer().world);
+			WorldSavedData mapdata = NoobModVariables.MapVariables.get(event.getPlayer().world);
+			WorldSavedData worlddata = NoobModVariables.WorldVariables.get(event.getPlayer().world);
 			if (mapdata != null)
-				TheGameofNoobs.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
-						new TheGameofNoobsVariables.WorldSavedDataSyncMessage(0, mapdata));
+				NoobMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
+						new NoobModVariables.WorldSavedDataSyncMessage(0, mapdata));
 			if (worlddata != null)
-				TheGameofNoobs.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
-						new TheGameofNoobsVariables.WorldSavedDataSyncMessage(1, worlddata));
+				NoobMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
+						new NoobModVariables.WorldSavedDataSyncMessage(1, worlddata));
 		}
 	}
 
 	@SubscribeEvent
 	public void onPlayerChangedDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
 		if (!event.getPlayer().world.isRemote) {
-			WorldSavedData worlddata = TheGameofNoobsVariables.WorldVariables.get(event.getPlayer().world);
+			WorldSavedData worlddata = NoobModVariables.WorldVariables.get(event.getPlayer().world);
 			if (worlddata != null)
-				TheGameofNoobs.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
-						new TheGameofNoobsVariables.WorldSavedDataSyncMessage(1, worlddata));
+				NoobMod.PACKET_HANDLER.send(PacketDistributor.PLAYER.with(() -> (ServerPlayerEntity) event.getPlayer()),
+						new NoobModVariables.WorldSavedDataSyncMessage(1, worlddata));
 		}
 	}
 	private int messageID = 0;
 	public <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, PacketBuffer> encoder, Function<PacketBuffer, T> decoder,
 			BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
-		TheGameofNoobs.PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
+		NoobMod.PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
 		messageID++;
 	}
 
@@ -126,9 +126,9 @@ public class TheGameofNoobsElements {
 		@Retention(RetentionPolicy.RUNTIME)
 		public @interface Tag {
 		}
-		protected final TheGameofNoobsElements elements;
+		protected final NoobModElements elements;
 		protected final int sortid;
-		public ModElement(TheGameofNoobsElements elements, int sortid) {
+		public ModElement(NoobModElements elements, int sortid) {
 			this.elements = elements;
 			this.sortid = sortid;
 		}
