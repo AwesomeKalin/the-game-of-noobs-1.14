@@ -261,7 +261,7 @@ public class NoobChestBlock extends NoobModElements.ModElement {
 
 		@Override
 		public int getInventoryStackLimit() {
-			return 364;
+			return 3;
 		}
 
 		@Override

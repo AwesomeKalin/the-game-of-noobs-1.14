@@ -74,7 +74,7 @@
     "guiBoundTo": "NoobChestGUI",
     "openGUIOnRightClick": false,
     "inventorySize": 2,
-    "inventoryStackSize": 364,
+    "inventoryStackSize": 3,
     "inventoryDropWhenDestroyed": false,
     "inventoryComparatorPower": true,
     "inventoryOutSlotIDs": [],
