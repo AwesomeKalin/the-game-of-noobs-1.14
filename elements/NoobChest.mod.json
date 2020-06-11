@@ -67,8 +67,8 @@
       "value": "SLIME"
     },
     "particleSpawningShape": "Top",
-    "particleSpawningRadious": 1.0,
-    "particleAmount": 14,
+    "particleSpawningRadious": 0.5,
+    "particleAmount": 4,
     "particleSpawningCondition": "ALWAYS",
     "hasInventory": true,
     "guiBoundTo": "NoobChestGUI",
