@@ -148,6 +148,60 @@
       "compiles": true,
       "locked_code": false,
       "ids": {}
+    },
+    {
+      "name": "MudSword",
+      "type": "tool",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mud_sword"
+    },
+    {
+      "name": "MudPickaxe",
+      "type": "tool",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mud_pickaxe"
+    },
+    {
+      "name": "MudAxeRec",
+      "type": "recipe",
+      "sortid": 11,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mud_axe_rec"
+    },
+    {
+      "name": "MudSwordRec",
+      "type": "recipe",
+      "sortid": 12,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mud_sword_rec"
+    },
+    {
+      "name": "NoobIgniterRec",
+      "type": "recipe",
+      "sortid": 13,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "noob_igniter_rec"
+    },
+    {
+      "name": "MudPickaxeRec",
+      "type": "recipe",
+      "sortid": 14,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "mud_pickaxe_rec"
     }
   ],
   "variable_elements": [],
@@ -157,24 +211,28 @@
       "item.noob.mudaxe": "Mud Axe",
       "biome.noob.noobbio": "Noob Biome",
       "item.noob.noobdim": "Noob Igniter",
-      "itemGroup.tabnoobtab": "Noob Tab",
+      "itemGroup.tabnoobtab": "The Game of Noobs",
       "item.noob.noobfood": "Noob Food",
-      "block.noob.noobchest": "Noob Chest"
+      "item.noob.mud_sword": "Mud Sword",
+      "block.noob.noobchest": "Noob Chest",
+      "item.noob.mud_pickaxe": "Mud Pickaxe"
     }
   },
   "workspaceSettings": {
     "modid": "noob",
     "modName": "The Game of Noobs",
-    "version": "1.0.0",
-    "author": "Kalin, MCreator",
-    "websiteURL": "https://mcreator.net",
+    "version": "1.1",
+    "description": "The mod for noobs. DO NOT USE IF YOU ARE A PRO",
+    "author": "AwesomeKalin55, AwesomeFootball 123",
+    "websiteURL": "https://github.com/AwesomeKalin/the-game-of-noobs-1.14",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
-    "currentGenerator": "1.14.4",
+    "currentGenerator": "forge-1.14.4",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "io.itch.awesomekalin.noob",
     "lockBaseModFiles": false
   },

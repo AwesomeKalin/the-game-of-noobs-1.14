@@ -3,11 +3,14 @@ loaderVersion="[28,)"
 
 [[mods]]
 modId="noob"
-version="1.0.0"
+version="1.1"
 displayName="The Game of Noobs"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="Kalin, MCreator"
+displayURL="https://github.com/AwesomeKalin/the-game-of-noobs-1.14"
+authors="AwesomeKalin55, AwesomeFootball 123"
+description='''
+The mod for noobs. DO NOT USE IF YOU ARE A PRO
+'''
 
 [[dependencies.noob]]
     modId="minecraft"
