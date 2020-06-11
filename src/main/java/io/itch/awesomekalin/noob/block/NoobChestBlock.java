@@ -34,6 +34,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Direction;
+import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
@@ -100,6 +101,17 @@ public class NoobChestBlock extends NoobModElements.ModElement {
 			setRegistryName("noobchest");
 		}
 
+		@OnlyIn(Dist.CLIENT)
+		@Override
+		public BlockRenderLayer getRenderLayer() {
+			return BlockRenderLayer.CUTOUT;
+		}
+
+		@Override
+		public boolean isNormalCube(BlockState state, IBlockReader worldIn, BlockPos pos) {
+			return false;
+		}
+
 		@Override
 		public MaterialColor getMaterialColor(BlockState state, IBlockReader blockAccess, BlockPos pos) {
 			return MaterialColor.ORANGE_TERRACOTTA;
@@ -125,10 +137,10 @@ public class NoobChestBlock extends NoobModElements.ModElement {
 			int j = y;
 			int k = z;
 			if (true)
-				for (int l = 0; l < 4; ++l) {
-					double d0 = (double) ((float) i + 0.5) + (double) (random.nextFloat() - 0.5) * 0.5D;
-					double d1 = ((double) ((float) j + 0.7) + (double) (random.nextFloat() - 0.5) * 0.5D) + 0.5;
-					double d2 = (double) ((float) k + 0.5) + (double) (random.nextFloat() - 0.5) * 0.5D;
+				for (int l = 0; l < 14; ++l) {
+					double d0 = (double) ((float) i + 0.5) + (double) (random.nextFloat() - 0.5) * 1D;
+					double d1 = ((double) ((float) j + 0.7) + (double) (random.nextFloat() - 0.5) * 1D) + 0.5;
+					double d2 = (double) ((float) k + 0.5) + (double) (random.nextFloat() - 0.5) * 1D;
 					world.addParticle(ParticleTypes.ITEM_SLIME, d0, d1, d2, 0, 0, 0);
 				}
 		}
