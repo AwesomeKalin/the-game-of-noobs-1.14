@@ -17,6 +17,9 @@
  */
 package io.itch.awesomekalin.noob;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -33,12 +36,14 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.entity.EntityType;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.block.Block;
 
 import java.util.function.Supplier;
 
 @Mod("noob")
 public class NoobMod {
+	public static final Logger LOGGER = LogManager.getLogger(NoobMod.class);
 	private static final String PROTOCOL_VERSION = "1";
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("noob", "noob"), () -> PROTOCOL_VERSION,
 			PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
@@ -57,6 +62,7 @@ public class NoobMod {
 
 	private void clientSetup(FMLClientSetupEvent event) {
 		OBJLoader.INSTANCE.addDomain("noob");
+		elements.getElements().forEach(element -> element.clientLoad(event));
 	}
 
 	@SubscribeEvent
@@ -82,6 +88,11 @@ public class NoobMod {
 	@SubscribeEvent
 	public void registerEntities(RegistryEvent.Register<EntityType<?>> event) {
 		event.getRegistry().registerAll(elements.getEntities().stream().map(Supplier::get).toArray(EntityType[]::new));
+	}
+
+	@SubscribeEvent
+	public void registerEnchantments(RegistryEvent.Register<Enchantment> event) {
+		event.getRegistry().registerAll(elements.getEnchantments().stream().map(Supplier::get).toArray(Enchantment[]::new));
 	}
 
 	@SubscribeEvent

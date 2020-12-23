@@ -250,7 +250,7 @@ public class NoobDimDimension extends NoobModElements.ModElement {
 		}
 
 		public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-			if (!world.isRemote && !entity.isPassenger() && !entity.isBeingRidden() && entity instanceof ServerPlayerEntity) {
+			if (!world.isRemote && !entity.isPassenger() && !entity.isBeingRidden() && entity instanceof ServerPlayerEntity && true) {
 				ServerPlayerEntity player = (ServerPlayerEntity) entity;
 				if (player.timeUntilPortal > 0) {
 					player.timeUntilPortal = 10;
@@ -761,7 +761,6 @@ public class NoobDimDimension extends NoobModElements.ModElement {
 	}
 
 	public static class ChunkProviderModded extends OverworldChunkGenerator {
-		private static final int SEALEVEL = 63;
 		public ChunkProviderModded(IWorld world, BiomeProvider provider) {
 			super(world, provider, new OverworldGenSettings() {
 				public BlockState getDefaultBlock() {
@@ -773,11 +772,6 @@ public class NoobDimDimension extends NoobModElements.ModElement {
 				}
 			});
 			this.randomSeed.skip(5349);
-		}
-
-		@Override
-		public int getSeaLevel() {
-			return SEALEVEL;
 		}
 
 		@Override
@@ -796,19 +790,23 @@ public class NoobDimDimension extends NoobModElements.ModElement {
 		private final Layer genBiomes;
 		private final Layer biomeFactoryLayer;
 		private final Biome[] biomes;
+		private static boolean biomesPatched = false;
 		public BiomeProviderCustom(World world) {
 			Layer[] aLayer = makeTheWorld(world.getSeed());
 			this.genBiomes = aLayer[0];
 			this.biomeFactoryLayer = aLayer[1];
 			this.biomes = dimensionBiomes;
-			for (Biome biome : this.biomes) {
-				biome.addCarver(GenerationStage.Carving.AIR, Biome.createCarver(new CaveWorldCarver(ProbabilityConfig::deserialize, 256) {
-					{
-						carvableBlocks = ImmutableSet.of(Blocks.DIRT.getDefaultState().getBlock(),
-								biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
-								biome.getSurfaceBuilder().getConfig().getUnder().getBlock());
-					}
-				}, new ProbabilityConfig(0.14285715f)));
+			if (!biomesPatched) {
+				for (Biome biome : this.biomes) {
+					biome.addCarver(GenerationStage.Carving.AIR, Biome.createCarver(new CaveWorldCarver(ProbabilityConfig::deserialize, 256) {
+						{
+							carvableBlocks = ImmutableSet.of(Blocks.DIRT.getDefaultState().getBlock(),
+									biome.getSurfaceBuilder().getConfig().getTop().getBlock(),
+									biome.getSurfaceBuilder().getConfig().getUnder().getBlock());
+						}
+					}, new ProbabilityConfig(0.14285715f)));
+				}
+				biomesPatched = true;
 			}
 		}
 
