@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "noob:noob_block"
+    "": {
+      "model": "noob:block/noob_block"
     }
   }
 }
