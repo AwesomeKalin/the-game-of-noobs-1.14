@@ -19,6 +19,7 @@ import net.minecraft.block.BlockState;
 import java.util.Map;
 import java.util.HashMap;
 
+import io.itch.awesomekalin.noob.procedures.CreativeGauntletRightClickedProcedure;
 import io.itch.awesomekalin.noob.itemgroup.NoobTabItemGroup;
 import io.itch.awesomekalin.noob.NoobModElements;
 

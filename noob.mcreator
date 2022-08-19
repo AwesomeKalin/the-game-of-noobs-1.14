@@ -556,7 +556,7 @@
       "name": "CreativeGauntlet",
       "type": "item",
       "sortid": 52,
-      "compiles": false,
+      "compiles": true,
       "locked_code": false,
       "ids": {},
       "registry_name": "creative_gauntlet"
@@ -590,6 +590,44 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "creative_gaunt"
+    },
+    {
+      "name": "TheNoobOnInitialEntitySpawn",
+      "type": "procedure",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "the_noob_on_initial_entity_spawn",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TheNoob",
+      "type": "mob",
+      "sortid": 55,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "the_noob"
     }
   ],
   "variable_elements": [
@@ -640,6 +678,7 @@
       "item.noob_hoe.name": "Noob Hoe",
       "item.mud_hoe.name": "Mud Hoe",
       "item.noob.dirt_armour_armor_chestplate": "DirtArmour Chestplate",
+      "item.noob.the_noob_spawn_egg": "The Noob Spawn Egg",
       "item.noob.noob_dust": "Noob",
       "item.mudsword.name": "Mud Sword",
       "item.mud_shovel_top.name": "Mud Shovel Top",
@@ -650,6 +689,7 @@
       "item.noob_armorboots.name": "Noob Boots",
       "item.noob_armorbody.name": "Noob Chestplate",
       "block.noob.noob_block": "Block of Noob",
+      "entity.noob.the_noob": "The Noob",
       "tile.noob_block.name": "Block of Noob",
       "item.noob.noob_armor_boots": "Noob Boots",
       "item.noob.mudsword": "Mud Sword",
