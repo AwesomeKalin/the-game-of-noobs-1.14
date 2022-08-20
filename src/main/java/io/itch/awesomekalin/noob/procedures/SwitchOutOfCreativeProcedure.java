@@ -19,7 +19,7 @@ import io.itch.awesomekalin.noob.NoobModElements;
 @NoobModElements.ModElement.Tag
 public class SwitchOutOfCreativeProcedure extends NoobModElements.ModElement {
 	public SwitchOutOfCreativeProcedure(NoobModElements instance) {
-		super(instance, 53);
+		super(instance, 56);
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 

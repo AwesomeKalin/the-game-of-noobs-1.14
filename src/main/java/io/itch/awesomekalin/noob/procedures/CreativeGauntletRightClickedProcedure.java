@@ -2,11 +2,13 @@ package io.itch.awesomekalin.noob.procedures;
 
 import net.minecraft.world.IWorld;
 import net.minecraft.world.GameType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
 
 import java.util.Map;
 
+import io.itch.awesomekalin.noob.item.CreativeGauntletItem;
 import io.itch.awesomekalin.noob.NoobModVariables;
 import io.itch.awesomekalin.noob.NoobModElements;
 
@@ -35,5 +37,9 @@ public class CreativeGauntletRightClickedProcedure extends NoobModElements.ModEl
 		NoobModVariables.WorldVariables.get(world).syncData(world);
 		NoobModVariables.WorldVariables.get(world).ActivatedGauntlet = (boolean) (true);
 		NoobModVariables.WorldVariables.get(world).syncData(world);
+		if (entity instanceof PlayerEntity) {
+			ItemStack _stktoremove = new ItemStack(CreativeGauntletItem.block, (int) (1));
+			((PlayerEntity) entity).inventory.clearMatchingItems(p -> _stktoremove.getItem() == p.getItem(), (int) 1);
+		}
 	}
 }

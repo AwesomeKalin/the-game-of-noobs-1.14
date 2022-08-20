@@ -29,6 +29,7 @@ import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
@@ -37,6 +38,7 @@ import net.minecraft.block.Block;
 import java.util.Set;
 import java.util.Random;
 
+import io.itch.awesomekalin.noob.entity.TheNoobEntity;
 import io.itch.awesomekalin.noob.NoobModElements;
 
 @NoobModElements.ModElement.Tag
@@ -66,6 +68,7 @@ public class NoobBioBiome extends NoobModElements.ModElement {
 			DefaultBiomeFeatures.addStructures(this);
 			DefaultBiomeFeatures.addOres(this);
 			DefaultBiomeFeatures.addLakes(this);
+			DefaultBiomeFeatures.addCarvers(this);
 			this.addStructure(Feature.STRONGHOLD, IFeatureConfig.NO_FEATURE_CONFIG);
 			this.addStructure(Feature.MINESHAFT, new MineshaftConfig(0.004D, MineshaftStructure.Type.NORMAL));
 			this.addStructure(Feature.PILLAGER_OUTPOST, new PillagerOutpostConfig(0.004D));
@@ -75,6 +78,7 @@ public class NoobBioBiome extends NoobModElements.ModElement {
 					new GrassFeatureConfig(Blocks.GRASS.getDefaultState()), Placement.COUNT_HEIGHTMAP_DOUBLE, new FrequencyConfig(1)));
 			addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Biome.createDecoratedFeature(new CustomTreeFeature(),
 					IFeatureConfig.NO_FEATURE_CONFIG, Placement.COUNT_EXTRA_HEIGHTMAP, new AtSurfaceWithExtraConfig(4, 0.1F, 1)));
+			this.addSpawn(EntityClassification.CREATURE, new Biome.SpawnListEntry(TheNoobEntity.entity, 100, 4, 10));
 		}
 
 		@OnlyIn(Dist.CLIENT)

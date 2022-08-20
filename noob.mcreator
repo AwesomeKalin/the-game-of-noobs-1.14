@@ -1,7 +1,7 @@
 {
   "id_map": {
-    "DIMENSION": 1,
-    "GUI": 1
+    "GUI": 1,
+    "DIMENSION": 1
   },
   "mod_elements": [
     {
@@ -562,9 +562,18 @@
       "registry_name": "creative_gauntlet"
     },
     {
+      "name": "CreativeGaunt",
+      "type": "recipe",
+      "sortid": 54,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "creative_gaunt"
+    },
+    {
       "name": "SwitchOutOfCreative",
       "type": "procedure",
-      "sortid": 53,
+      "sortid": 56,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -583,47 +592,9 @@
       }
     },
     {
-      "name": "CreativeGaunt",
-      "type": "recipe",
-      "sortid": 54,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "creative_gaunt"
-    },
-    {
-      "name": "TheNoobOnInitialEntitySpawn",
-      "type": "procedure",
-      "sortid": 55,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "the_noob_on_initial_entity_spawn",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "TheNoob",
       "type": "mob",
-      "sortid": 55,
+      "sortid": 57,
       "compiles": true,
       "locked_code": false,
       "ids": {},
@@ -671,12 +642,12 @@
       "item.noob.mud_shovel_top": "Mud Shovel Top",
       "tile.noob_ore.name": "Noob Ore",
       "item.noob.noob_pickaxe": "Noob Pickaxe",
-      "item.noob.mudaxe": "Mud Axe",
       "item.noob.mud_shovel": "Mud Shovel",
+      "item.noob.mudaxe": "Mud Axe",
       "item.noob.saliva": "Saliva",
-      "item.noob_axe.name": "Noob Axe",
-      "item.noob_hoe.name": "Noob Hoe",
       "item.mud_hoe.name": "Mud Hoe",
+      "item.noob_hoe.name": "Noob Hoe",
+      "item.noob_axe.name": "Noob Axe",
       "item.noob.dirt_armour_armor_chestplate": "DirtArmour Chestplate",
       "item.noob.the_noob_spawn_egg": "The Noob Spawn Egg",
       "item.noob.noob_dust": "Noob",

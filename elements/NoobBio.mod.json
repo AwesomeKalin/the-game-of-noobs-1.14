@@ -83,8 +83,19 @@
       "MonsterRooms",
       "Structures",
       "Ores",
-      "Lakes"
+      "Lakes",
+      "FrozenTopLayer"
     ],
-    "spawnEntries": []
+    "spawnEntries": [
+      {
+        "entity": {
+          "value": "CUSTOM:TheNoob"
+        },
+        "minGroup": 4,
+        "maxGroup": 10,
+        "weight": 100,
+        "spawnType": "creature"
+      }
+    ]
   }
 }
