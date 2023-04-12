@@ -1,0 +1,32 @@
+{
+  "group": "noob",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "noob:noob_planks"
+    },
+    "1": {
+      "item": "minecraft:stick"
+    },
+    "2": {
+      "item": "noob:noob_planks"
+    },
+    "3": {
+      "item": "noob:noob_planks"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "5": {
+      "item": "noob:noob_planks"
+    }
+  },
+  "result": {
+    "item": "noob:noob_fence",
+    "count": 3
+  }
+}

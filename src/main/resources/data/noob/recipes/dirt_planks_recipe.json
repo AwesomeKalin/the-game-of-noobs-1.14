@@ -1,0 +1,13 @@
+{
+  "group": "noob",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:dirt_log"
+    }
+  ],
+  "result": {
+    "item": "noob:dirt_planks",
+    "count": 4
+  }
+}

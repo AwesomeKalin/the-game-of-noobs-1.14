@@ -1,0 +1,26 @@
+{
+  "group": "noob",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "noob:dirt_log"
+    },
+    "1": {
+      "item": "noob:dirt_log"
+    },
+    "2": {
+      "item": "noob:dirt_log"
+    },
+    "3": {
+      "item": "noob:dirt_log"
+    }
+  },
+  "result": {
+    "item": "noob:dirt_wood",
+    "count": 3
+  }
+}

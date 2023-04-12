@@ -1,0 +1,22 @@
+{
+  "group": "noob",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012"
+  ],
+  "key": {
+    "0": {
+      "item": "noob:dirt_planks"
+    },
+    "1": {
+      "item": "noob:dirt_planks"
+    },
+    "2": {
+      "item": "noob:dirt_planks"
+    }
+  },
+  "result": {
+    "item": "noob:dirt_slab",
+    "count": 6
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 4,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DirtPlanks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DirtPlanks"
+      },
+      {
+        "value": "CUSTOM:DirtPlanks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DirtPlanks"
+      },
+      {
+        "value": "CUSTOM:DirtPlanks"
+      },
+      {
+        "value": "CUSTOM:DirtPlanks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DirtStairs"
+    },
+    "name": "dirt_stairs_recipe",
+    "namespace": "mod"
+  }
+}

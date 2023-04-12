@@ -1,0 +1,33 @@
+{
+  "group": "noob",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "0  ",
+    "34 ",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "noob:noob_planks"
+    },
+    "3": {
+      "item": "noob:noob_planks"
+    },
+    "4": {
+      "item": "noob:noob_planks"
+    },
+    "6": {
+      "item": "noob:noob_planks"
+    },
+    "7": {
+      "item": "noob:noob_planks"
+    },
+    "8": {
+      "item": "noob:noob_planks"
+    }
+  },
+  "result": {
+    "item": "noob:noob_stairs",
+    "count": 4
+  }
+}
